@@ -1,0 +1,99 @@
+[gd_scene load_steps=19 format=3]
+
+[ext_resource type="Texture2D" path="res://sprites/player/idle.png" id="1_idle"]
+[ext_resource type="Texture2D" path="res://sprites/player/walk.png" id="2_walk"]
+[ext_resource type="Texture2D" path="res://sprites/player/jump.png" id="3_jump"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="4_script"]
+
+[sub_resource type="AtlasTexture" id="Atlas_idle_0"]
+atlas = ExtResource("1_idle")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="Atlas_idle_1"]
+atlas = ExtResource("1_idle")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="Atlas_idle_2"]
+atlas = ExtResource("1_idle")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="Atlas_idle_3"]
+atlas = ExtResource("1_idle")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="Atlas_idle_4"]
+atlas = ExtResource("1_idle")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="Atlas_walk_0"]
+atlas = ExtResource("2_walk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="Atlas_walk_1"]
+atlas = ExtResource("2_walk")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="Atlas_walk_2"]
+atlas = ExtResource("2_walk")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="Atlas_walk_3"]
+atlas = ExtResource("2_walk")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="Atlas_walk_4"]
+atlas = ExtResource("2_walk")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="Atlas_walk_5"]
+atlas = ExtResource("2_walk")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="Atlas_jump"]
+atlas = ExtResource("3_jump")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_player"]
+animations = [{
+"frames": [{"duration": 1.0, "texture": SubResource("Atlas_idle_0")}, {"duration": 1.0, "texture": SubResource("Atlas_idle_1")}, {"duration": 1.0, "texture": SubResource("Atlas_idle_2")}, {"duration": 1.0, "texture": SubResource("Atlas_idle_3")}, {"duration": 1.0, "texture": SubResource("Atlas_idle_4")}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{"duration": 1.0, "texture": SubResource("Atlas_jump")}],
+"loop": false,
+"name": &"jump",
+"speed": 8.0
+}, {
+"frames": [{"duration": 1.0, "texture": SubResource("Atlas_walk_0")}, {"duration": 1.0, "texture": SubResource("Atlas_walk_1")}, {"duration": 1.0, "texture": SubResource("Atlas_walk_2")}, {"duration": 1.0, "texture": SubResource("Atlas_walk_3")}, {"duration": 1.0, "texture": SubResource("Atlas_walk_4")}, {"duration": 1.0, "texture": SubResource("Atlas_walk_5")}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="Capsule_player"]
+radius = 4.5
+height = 14.0
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 1
+script = ExtResource("4_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_player")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("Capsule_player")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -18)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+limit_left = 0
+limit_top = 0
+limit_right = 1360
+limit_bottom = 400
+limit_smoothed = true
