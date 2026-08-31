@@ -1,0 +1,12 @@
+[gd_scene format=4]
+[node name="Final" type="Node2D"]
+[node name="Fundo" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0,0,384,0,384,216,0,216)
+color = Color(0.08,0.16,0.13,1)
+[node name="Titulo" type="Label" parent="."]
+position = Vector2(48,55)
+size = Vector2(288,100)
+text = "PARABÉNS!\nVocê concluiu a floresta e a caverna.\nFIM DO JOGO"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 16
