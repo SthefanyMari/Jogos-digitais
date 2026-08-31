@@ -1,0 +1,7 @@
+# Mantem os arquivos importados que a atividade pede, mas ignora dados locais do editor.
+.godot/editor/
+.godot/shader_cache/
+.godot/mono/
+.godot/global_script_class_cache.cfg
+.godot/uid_cache.bin
+
