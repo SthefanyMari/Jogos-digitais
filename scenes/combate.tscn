@@ -1,0 +1,75 @@
+[gd_scene format=4 uid="uid://dcp8mo7wlfo0u"]
+
+[ext_resource type="Texture2D" uid="uid://cb51rge4m8apx" path="res://sprites/4 - Winter World/Terrain (16 x 16).png" id="1_gtb6u"]
+[ext_resource type="PackedScene" uid="uid://bkw01wy7mewbn" path="res://entities/player_2.tscn" id="2_gtb6u"]
+[ext_resource type="PackedScene" uid="uid://bbgmmwjmun0a8" path="res://entities/zumbi_lento.tscn" id="3_eq4v2"]
+[ext_resource type="PackedScene" uid="uid://dp42gyismk14u" path="res://entities/zumbi_rapido.tscn" id="4_qwq5a"]
+[ext_resource type="PackedScene" uid="uid://c0rvwe1vyl7ql" path="res://entities/zumbi_grande.tscn" id="5_i4don"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yb5af"]
+texture = ExtResource("1_gtb6u")
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.0021877, -8, -2.0021877)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.0021877, -8, -2.0021877)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.0021877, -8, -2.0021877)
+11:1/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+11:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+15:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+11:4/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+11:5/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+4:8/0 = 0
+2:1/0 = 0
+6:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4mixm"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_yb5af")
+
+[node name="Combate" type="Node2D" unique_id=662601077]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1599052433]
+position = Vector2(-8, 0)
+tile_map_data = PackedByteArray("AAABAAwAAAADAAIAAAACAAwAAAAEAAEAAAADAAwAAAAEAAEAAAAEAAwAAAAEAAEAAAAFAAwAAAAEAAEAAAAGAAwAAAAEAAEAAAAHAAwAAAAEAAEAAAAIAAwAAAAEAAEAAAAJAAwAAAAEAAEAAAAKAAwAAAAEAAEAAAALAAwAAAAEAAEAAAAMAAwAAAAEAAEAAAANAAwAAAAEAAEAAAAOAAwAAAAEAAEAAAAPAAwAAAAEAAEAAAAQAAwAAAAEAAEAAAARAAwAAAAEAAEAAAASAAwAAAAEAAEAAAATAAwAAAAEAAEAAAAUAAwAAAAEAAEAAAAVAAwAAAAEAAEAAAAWAAwAAAAEAAEAAAAXAAwAAAAEAAEAAAAYAAwAAAAEAAEAAAAZAAwAAAAEAAEAAAAaAAwAAAAEAAEAAAAbAAwAAAAEAAEAAAAcAAwAAAAEAAEAAAAdAAwAAAAEAAEAAAAeAAwAAAAEAAEAAAAfAAwAAAAEAAEAAAAgAAwAAAAEAAEAAAAhAAwAAAAEAAEAAAAiAAwAAAAEAAEAAAAjAAwAAAAEAAEAAAAkAAwAAAAEAAEAAAAlAAwAAAAEAAEAAAAmAAwAAAAEAAEAAAAnAAwAAAAEAAEAAAAoAAwAAAAEAAEAAAApAAwAAAAEAAEAAAAqAAwAAAAEAAEAAAArAAwAAAAEAAEAAAAsAAwAAAAEAAEAAAAtAAwAAAAEAAEAAAAuAAwAAAAEAAEAAAAvAAwAAAAEAAEAAAAwAAwAAAAEAAEAAAAxAAwAAAAFAAIAAAABAAsAAAADAAIAAAABAAoAAAADAAIAAAABAAkAAAADAAIAAAABAAgAAAADAAIAAAABAAcAAAADAAIAAAABAAYAAAADAAEAAAAxAAsAAAAFAAIAAAAxAAoAAAAFAAIAAAAxAAkAAAAFAAIAAAAxAAgAAAAFAAIAAAAxAAcAAAAFAAEAAAA=")
+tile_set = SubResource("TileSet_4mixm")
+
+[node name="Player2" parent="." unique_id=522533472 instance=ExtResource("2_gtb6u")]
+position = Vector2(53, 160)
+
+[node name="zumbi" parent="." unique_id=1038781527 instance=ExtResource("3_eq4v2")]
+position = Vector2(268, 171)
+
+[node name="zumbi2" parent="." unique_id=702937867 instance=ExtResource("4_qwq5a")]
+position = Vector2(460, 170)
+
+[node name="zumbi3" parent="." unique_id=82087100 instance=ExtResource("5_i4don")]
+position = Vector2(675, 168)
